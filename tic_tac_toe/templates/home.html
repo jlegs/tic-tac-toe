@@ -1,0 +1,54 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css"/>
+</head>
+
+<body>
+
+
+{% if game_message %}
+    <div class="end-game-message">
+        {{ game_message }}
+    </div>
+{% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="board">
+            <div class=""></div>
+        {% for tile in game.tiles.all %}
+            <div class="tile">
+                {%  if tile.computer %}
+                    <div class="move">
+                        {{ game.computer.avatar }}
+                    </div>
+                {% elif tile.player %}
+                    <div class="move">
+                        {{ tile.player.avatar }}
+                    </div>
+                {% else %}
+                    {% if game_message %}
+                        <div class="text">
+                        </div>
+                    {% else %}
+                        <input type="submit" value="{{ tile.position }}" name="tile" id="tile" class="form-val"/>
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+    </form>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="New Game" name="new_game" id="new_game"/>
+    </form>
+        </div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+$('#new_game').click(function () {alert("Good luck!! You're gonna need it!");})</script>
+
+
+</body>
+
+</html>

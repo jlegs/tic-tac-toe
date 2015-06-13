@@ -1,0 +1,68 @@
+.board {
+    margin:auto;
+    width: 70%;
+    height: auto;
+}
+
+
+
+.board-grid {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33%;
+    height: 50%;
+    border-left: thick solid black;
+    border-right: thick solid black;
+    z-index: 1000;
+}
+
+
+#tile {
+    background-color:#E5E4E2;
+    width: 100%;
+    float: left;
+    height: 100%;
+    overflow: auto;
+}
+
+
+.tile {
+    background-color:#E5E4E2;
+    width: 30%;
+    float: left;
+    display: inline;
+    text-align: center;
+    height: 30%;
+    overflow: auto;
+    border: thick #CCCCCC solid;
+
+}
+
+.move {
+    margin: auto;
+    margin-top: 33%;
+    color: red;
+}
+
+.form-val {
+    color: #E5E4E2;
+}
+.submit {
+    margin: auto;
+    float: left;
+    height: auto;
+    align: center;
+}
+
+
+input#new_game {
+    height: 15%;
+
+}
+
+.end-game-message {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
